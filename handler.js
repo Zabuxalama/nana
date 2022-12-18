@@ -28,12 +28,6 @@ module.exports = {
         //global.bg = await (await fetch(img)).buffer()
         global.time = require('moment-timezone').tz('Asia/Jakarta').format('HH:mm:ss')
 
-        if (!m) return
-        // console.log(m)
-        const Tnow = (new Date()/1000).toFixed(0)
-        const seli = Tnow - m.messageTimestamp
-        if (seli > global.Intervalmsg) return console.log(new ReferenceError(`Pesan ${Intervalmsg} detik yang lalu diabaikan agar tidak nyepam`))
-        
         try {
             m = simple.smsg(this, m) || m
             if (!m) return
